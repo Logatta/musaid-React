@@ -1,0 +1,23 @@
+.lang-icon {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+.rs-sidenav-collapse-in {
+  width: 240px;
+}
+
+.nav {
+  background-color: white;
+}
+
+.sidebar {
+  background-color: white;
+}
+
+.rs-sidenav-item {
+  background-color: white !important;
+  &:hover {
+    background-color: #e5e5ea !important;
+  }
+}

@@ -1,0 +1,37 @@
+.custom-card {
+  background-color: white;
+  padding: 24px;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: 12px;
+  @media screen and (max-width: 992px) {
+    padding: 12px;
+  }
+}
+
+.deleteBtn {
+  position: absolute !important;
+  z-index: 1;
+  left: 20px;
+  transform: translate(0, 14px);
+}
+
+.rs-panel-title span {
+  margin-right: 18px;
+}
+
+.rs-panel-group {
+//   background-color: rgb(240, 240, 240);
+  .rs-panel:not(:last-of-type) {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: calc(100% - 40px);
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      height: 1px;
+      background-color: var(--bs-border-color);
+    }
+  }
+}
