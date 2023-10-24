@@ -3,7 +3,7 @@ import axios from "axios";
 import { useCookies } from "react-cookie";
 import { useCallback } from "react";
 
-export const apiUrl_ = "https://musaid-test-4mooy.ondigitalocean.app/";
+export const apiUrl_ = "https://musaid.logatta.com/";
 
 // helper function to handle getting Authorization headers EXACTLY right
 function config(access_token: string) {
