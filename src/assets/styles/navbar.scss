@@ -17,7 +17,29 @@
 
 .rs-sidenav-item {
   background-color: white !important;
+  padding-right: 56px !important;
+  padding-left: 20px !important;
   &:hover {
     background-color: #e5e5ea !important;
   }
+
+  .rs-sidenav-item-icon {
+    left: unset;
+    right: 20px;
+    margin-right: 0 !important;
+    margin-left: 20px;
+  }
+
+}
+
+.rs-sidenav-body {
+  overflow: hidden;
+}
+.rs-navbar-brand {
+  padding: 8px;
+  padding-left: 21px;
+}
+.navbar-logo {
+  height: 100%;
+  cursor: pointer;
 }

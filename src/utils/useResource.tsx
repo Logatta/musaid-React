@@ -74,7 +74,9 @@ export default function useResource({
           `${resourceUrl}${suffix}`,
           config(cookies?.tokens?.access)
         );
-
+        if (response.status === 200 && response.data.error !== null) {
+          throw new Error("An error occurred during request")
+        }
         return response.data;
       } catch (error) {
         handleError(error);
@@ -90,6 +92,9 @@ export default function useResource({
         info,
         config(cookies?.tokens?.access)
       );
+      if (response.status === 200 && response.data.error !== null) {
+        throw new Error("An error occurred during request")
+      }
       return response.data;
     } catch (error) {
       handleError(error);
@@ -100,6 +105,9 @@ export default function useResource({
     try {
       const url = `${resourceUrl}${id}/`;
       const response = await axios.delete(url, config(cookies?.tokens?.access));
+      if (response.status === 200 && response.data.error !== null) {
+        throw new Error("An error occurred during request")
+      }
       return response.data;
     } catch (error) {
       handleError(error);
@@ -114,6 +122,9 @@ export default function useResource({
         data,
         config(cookies?.tokens?.access)
       );
+      if (response.status === 200 && response.data.error !== null) {
+        throw new Error("An error occurred during request")
+      }
       return response.data;
     } catch (error) {
       handleError(error);
@@ -128,6 +139,9 @@ export default function useResource({
         data,
         config(cookies?.tokens?.access)
       );
+      if (response.status === 200 && response.data.error !== null) {
+        throw new Error("An error occurred during request")
+      }
       return response.data;
     } catch (error) {
       handleError(error);
@@ -142,6 +156,9 @@ export default function useResource({
         data,
         config(cookies?.tokens?.access)
       );
+      if (response.status === 200 && response.data.error !== null) {
+        throw new Error("An error occurred during request")
+      }
       return response.data;
     } catch (error) {
       handleError(error);
@@ -152,6 +169,9 @@ export default function useResource({
     try {
       const url = `${resourceUrl}${id}/`;
       const response = await axios.get(url, config(cookies?.tokens?.access));
+      if (response.status === 200 && response.data.error !== null) {
+        throw new Error("An error occurred during request")
+      }
       return response.data;
     } catch (error) {
       handleError(error);

@@ -8,8 +8,7 @@ import GridIcon from "@rsuite/icons/Grid";
 import MenuIcon from "@rsuite/icons/Menu";
 import { FaRegUserCircle } from "@react-icons/all-files/fa/FaRegUserCircle";
 import { BiLogOutCircle } from "@react-icons/all-files/bi/BiLogOutCircle";
-
-import Flag from "react-country-flag";
+import logo from "../assets/img/logo.png";
 
 import "../assets/styles/navbar.scss";
 import { useCookies } from "react-cookie";
@@ -35,8 +34,9 @@ const CustomNavbar: React.FC<NavbarProps> = ({
     window.location.href = "/login";
   };
   return (
-    <Navbar {...props} className="nav">
+    <Navbar {...props} className="nav" style={{ direction: "rtl" }}>
       <Nav
+        pullRight
         onClick={() => dispatch(sideNavExpanded())}
         className="d-none d-md-block"
       >
@@ -45,32 +45,33 @@ const CustomNavbar: React.FC<NavbarProps> = ({
         </Nav.Item>
       </Nav>
 
-      <Nav onSelect={onSelect} activeKey={activeKey} pullRight>
+      <Nav pullRight onSelect={onSelect} activeKey={activeKey}>
         <Nav.Menu
           title={
             cookies?.user?.mobile_number ? cookies?.user?.mobile_number : ""
           }
           icon={<FaRegUserCircle />}
         >
-          <Nav.Item
+          {/* <Nav.Item
             icon={<FaRegUserCircle />}
             eventKey="4"
             onClick={() => navigate("/my-account")}
           >
             حسابي
-          </Nav.Item>
+          </Nav.Item> */}
 
           <Nav.Item
             onClick={handleLogout}
             icon={<BiLogOutCircle />}
             eventKey="6"
+            className="d-flex gap-2 justify-content-center align-items-center"
           >
             تسجيل الخروج
           </Nav.Item>
         </Nav.Menu>
       </Nav>
 
-      <Nav pullRight className="d-md-none">
+      <Nav className="d-md-none">
         <Dropdown icon={<GridIcon />} noCaret>
           <Dropdown.Item onClick={() => navigate("/")}>
             الصفحة الرئيسية
@@ -84,7 +85,12 @@ const CustomNavbar: React.FC<NavbarProps> = ({
         </Dropdown>
       </Nav>
 
-      <Nav pullRight>
+      <Navbar.Brand style={{ marginRight: "auto" }} >
+      <img src={logo} alt="logo" className="navbar-logo" onClick={() => navigate("/")} />
+
+      </Navbar.Brand>
+
+      {/* <Nav pullRight>
         <Dropdown
           icon={<Flag countryCode="SA" svg className="lang-icon" />}
           noCaret
@@ -96,7 +102,7 @@ const CustomNavbar: React.FC<NavbarProps> = ({
             <Flag countryCode="SA" svg className="lang-icon" /> العربية
           </Dropdown.Item>
         </Dropdown>
-      </Nav>
+      </Nav> */}
     </Navbar>
   );
 };

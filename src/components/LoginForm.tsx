@@ -51,7 +51,8 @@ const LoginForm: React.FC = () => {
         method: "post",
         data: loginCred,
       });
-
+      console.log(response);
+      
       setTokens(response.data);
       setUser((prevUser) => ({
         ...prevUser,
@@ -67,7 +68,7 @@ const LoginForm: React.FC = () => {
       }));
       navigate("/");
     } catch (error) {
-      setError("An error occurred");
+      setError("Credintials are Invalid");
     }
   };
 
@@ -121,7 +122,7 @@ const LoginForm: React.FC = () => {
           </button>
 
           {error && (
-            <div className="form-group">
+            <div className="form-group mt-3">
               <div className="alert alert-danger" role="alert">
                 {error}
               </div>

@@ -6,7 +6,7 @@ import { RootState } from "../slices/rootReducer";
 import { Sidenav, Nav } from "rsuite";
 import DashboardIcon from "@rsuite/icons/legacy/Dashboard";
 import BarChartIcon from "@rsuite/icons/BarChart";
-import UserInfoIcon from "@rsuite/icons/UserInfo";
+// import UserInfoIcon from "@rsuite/icons/UserInfo";
 import { useNavigate } from "react-router-dom";
 
 function SidNav() {
@@ -37,29 +37,29 @@ function SidNav() {
               eventKey="1"
               icon={<DashboardIcon />}
             >
-              الصفحة الرئيسية
+              <p>الصفحة الرئيسية</p>
             </Nav.Item>
             <Nav.Item
               onClick={() => navigate("/profits")}
               eventKey="2"
               icon={<BarChartIcon />}
             >
-              الأرباح
+              <p>الأرباح</p>
             </Nav.Item>
             <Nav.Item
               onClick={() => navigate("/orders/orders-waiting")}
               eventKey="3"
               icon={<DashboardIcon />}
             >
-              الطلبات
+              <p>الطلبات</p>
             </Nav.Item>
-            <Nav.Item
+            {/* <Nav.Item
               onClick={() => navigate("/my-account")}
               eventKey="4"
               icon={<UserInfoIcon />}
             >
-              حسابي
-            </Nav.Item>
+              <p>حسابي</p>
+            </Nav.Item> */}
           </Nav>
         </Sidenav.Body>
       </Sidenav>

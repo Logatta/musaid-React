@@ -11,14 +11,13 @@ export const makeApiRequest = async <T,>({
   try {
     const response = await axios({ url: route, method, data, headers });
 
-    if (response.status === 200) {
+    if (response.status === 200 && response.data.error == null) {
       return response.data;
     } else {
       throw new Error("Invalid response");
     }
   } catch (error) {
     console.log("An error occurred", error);
-
     throw new Error("An error occurred");
   }
 };

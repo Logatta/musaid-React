@@ -8,7 +8,7 @@ import Profits from "pages/Profits";
 import Login from "pages/Login";
 import AddProduct from "pages/AddProduct";
 import EditProduct from "./pages/EditProduct";
-import MyAccount from "pages/MyAccount";
+// import MyAccount from "pages/MyAccount";
 import Orders from "pages/Orders";
 import StoreAcceptance from "components/orders/StoreAcceptance";
 import OrdersWaiting from "components/orders/OrdersWaiting";
@@ -29,7 +29,7 @@ const App: React.FC = () => {
             <Route path="/login" element={<Login />} />
             <Route element={<Layout />}>
               <Route path="/" element={<MainPage />} />
-              <Route path="/my-account" element={<MyAccount />} />
+              {/* <Route path="/my-account" element={<MyAccount />} /> */}
               {/* <Route path="/edit-account" element={<UpdateAccount />} /> */}
               <Route path="/add-product" element={<AddProduct />} />
               <Route element={<Orders />}>
