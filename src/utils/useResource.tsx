@@ -29,7 +29,8 @@ export default function useResource({
   const handleError = useCallback(
     (error: any) => {
       if (error.response.status === 500) {
-        window.location.href = "/";
+        alert("server facing a problem, please contact support")
+        window.location.href = "/login";
         return;
       }
 
